@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .container-edulaw { @apply mx-auto max-w-6xl px-4; }
+
+  /* spacing antar section: lebih dekat */
+  .section { @apply py-10 md:py-12; }
+  .section-tight { @apply py-8 md:py-10; }
+
+  .card {
+    @apply rounded-3xl border border-slate-200/70 bg-white shadow-sm
+           transition hover:shadow-md;
+  }
+  .card-muted { @apply bg-slate-50; }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-xl px-4 py-2
+           text-sm font-semibold transition;
+  }
+  .btn-primary { @apply bg-gold-500 text-navy-950 hover:bg-gold-600; }
+  .btn-ghost { @apply bg-white/10 text-slate-100 hover:bg-white/15; }
+  .btn-outline { @apply border border-slate-200 bg-white text-slate-700 hover:bg-slate-50; }
+
+  .eyebrow { @apply text-xs tracking-[0.25em] text-slate-300 uppercase; }
+}
