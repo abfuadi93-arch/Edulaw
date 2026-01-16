@@ -14,5 +14,11 @@ class HomeController extends Controller
             ->get();
 
         return view('pages.home', compact('latestInsights'));
+        $programs = \App\Models\Program::where('is_active', true)
+    ->orderBy('sort_order')
+    ->take(4)
+    ->get();
+
     }
+    
 }

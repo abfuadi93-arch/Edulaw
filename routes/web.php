@@ -7,9 +7,11 @@ use App\Http\Controllers\InsightController;
 use App\Http\Controllers\OpinionController;
 use App\Http\Controllers\ProfileController;
 
+
 use App\Http\Controllers\Admin\InsightAdminController;
 use App\Http\Controllers\Admin\AdminSettingController;
 use App\Http\Controllers\Admin\AdminOpinionController;
+
 
 use App\Models\Opinion;
 
@@ -20,7 +22,7 @@ use App\Models\Opinion;
 */
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::view('/program', 'pages.program')->name('program');
+Route::get('/program', [ProgramController::class, 'index'])->name('program');
 Route::view('/publikasi', 'pages.publikasi')->name('publikasi');
 Route::view('/tentang', 'pages.tentang')->name('tentang');
 
@@ -93,5 +95,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/program', [ProgramController::class, 'index'])->name('program');
 
 require __DIR__ . '/auth.php';
